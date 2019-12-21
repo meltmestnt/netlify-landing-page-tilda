@@ -1,0 +1,16 @@
+@import "./vendors/bootstrap/main";
+
+.btn:hover {
+  background-color: initial;
+  color: initial;
+}
+.btn:active,
+.btn:focus {
+  background-color: initial !important;
+  color: initial !important;
+}
+
+.btn {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
