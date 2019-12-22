@@ -57,14 +57,24 @@ module.exports = (env = {}, argv) => {
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           exclude: /fonts/,
-          use: "file-loader"
+          use: [
+            {
+              loader: "file-loader",
+              options: {
+                name: "[name].[ext]",
+                outputPath: "./img/"
+              }
+            }
+          ]
         },
         {
           test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
           exclude: /img/,
-          use: {
-            loader: "url-loader"
-          }
+          use: [
+            {
+              loader: "url-loader"
+            }
+          ]
         },
         {
           test: /\.html$/,
